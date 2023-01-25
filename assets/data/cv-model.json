@@ -1,0 +1,74 @@
+{
+	"datos": {
+		"personales": {
+			"Nombre": "Patricio",
+			"linkedin": "https://www.linkedin.com/in/patricio-aragon/",
+			"Email": "patricioaragon@alu.frt.utn.edu.ar"
+		},
+		"estudios": {
+			"universitarios": {
+				"Lugar": "UTN - FRT",
+				"Titulo": "Ingeniería en Sistemas de Información",
+				"Estado": "Cursando"
+			},
+			"complementarios": [
+				{
+					"Curso": "ARGENTINA PROGRAMA 4.0",
+					"Período": "2022-2023"
+				},
+				{
+					"Curso": "QA | QC - Tester de Software (Egg)",
+					"Período": "2021-2022"
+				},
+				{
+					"Curso": "111Mil - Analista del Conocimiento (Ministerio de Trabajo).",
+					"Período": "2017-2018"
+				},
+				{
+					"Curso": "Curso de Redes Cisco CCNA 1, CCN2, CCNA3 (UTN).",
+					"Período": "2015-2016"
+				},
+				{
+					"Curso": "Programación Android (UTN).",
+					"Período": "2014"
+				}
+			]
+		},
+		"trabajos": [
+			{
+				"Trabajo": "Vendedor",
+				"Período": "2010"
+			},
+			{
+				"Trabajo": "Cajero",
+				"Período": "2012-2020"
+			},
+			{
+				"Trabajo": "Técnico independiente",
+				"Período": "2008-2021"
+			}
+		],
+		"habilidades": [
+			{
+				"Tipo":	"Analítico",
+				"Puntaje": "5"
+			},
+			{
+				"Tipo":	"Aprender rápidamente",
+				"Puntaje": "4"
+			},
+			{
+				"Tipo":	"Buen observador",
+				"Puntaje": "5"
+			},
+			{
+				"Tipo":	"Creativo e innovador",
+				"Puntaje": "5"
+			},
+			{
+				"Tipo":	"Comunicación efectiva",
+				"Puntaje": "4.5"
+			}
+		]
+	}
+}

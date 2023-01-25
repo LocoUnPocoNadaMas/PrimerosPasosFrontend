@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+
+nav {
+    text-align: right;
+}
+
+a {
+    margin: 5%;
+}
+
+.letra1 {
+    color: #7EA4A4
+}
+.letra2 {
+    color: #7E8C8C
+}
+.letra3 {
+    color: #E3E3E3;
+}
+
+.fondo1 {
+    color: #BCD9D9
+}
+.fondo2 {
+    color: #929E9E
+}
+.fondo3 {
+    color: #CED6D6
+}
+.fondo4 {
+    color: #9FBBBB
+}
+.fondo5 {
+    color: #7EA4A4
+}
+.fondo6 {
+    background-color: #0F364D;
+}
+
+section {
+    border-color: #7ea4a4;
+}
+
+header {
+    text-align: center;
+}
+
+#barra {
+    text-align: center;
+}
+
+h3 {
+    color: #7E8C8C;
+    background-color: #CED6D6;
+}
+
+@media only screen and (max-width:600px) {
+    body {
+        background-color: #0F364D;
+    }
+}
+
+#personal {
+    text-align: right;
+}
+
+section {
+    background-color: white;
+    border-width: 10px;
+    border-radius: 15px;
+    border-color: black;
+    padding: auto;
+    margin: 5%;
+}
+
+img #perfil{
+    height: 100px;
+}
+
+footer {
+    background-color: black;
+    color: azure;
+    text-align: center;
+}
+
+footer img {
+    /**height: fit-content; */
+    /*float: left;*/
+    width: 25%;
+}
+
+/*
+BCD9D9 letra clara - resaltado
+93C0C0 
+6BA3A3 fondo footer y header
+4D8E8E pestaña en uso
+347C7C letra oscura - enfasis seleccion
+*/
+
+/*
+7EA4A4 letra clara - resaltado
+9FBBBB
+CED6D6 fondo footer y header
+929E9E pestaña en uso
+7E8C8C borde - letra oscura - enfasis seleccion
+*/
+
+
+/**
+#834969
+#613663
+#1A414D
+#138645
+#6FB319
+#A3E44E
+#D5E44E
+#DF4320
+#B33519
+*/
+
+/*
+#0F364D
+#507385
+#8FA7B3
+#E3E3E3
+#C8CBDE
+#989DB3
+#606580
+#494D61
+*/
