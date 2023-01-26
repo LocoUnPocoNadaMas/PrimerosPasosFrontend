@@ -8,12 +8,12 @@
     <base href="./">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <!-- Protocolo OG para RRSS -->
-    <meta property="og:title" content="Curriculum Vitae" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description"
-        content="Ejemplo de CV." />
-    <meta property="og:url" content="https://locounpoconadamas.github.io/PrimerosPasosFrontend/" />
+
     <!-- <meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" /> -->
+    <meta property="og:title" content="Curriculum Vitae" />
+    <meta property="og:description" content="Ejemplo de CV." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://locounpoconadamas.github.io/PrimerosPasosFrontend/" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script type="module" src="script.js" ></script>
     <!-- Bootstrap CSS -->
@@ -21,22 +21,30 @@
 </head>
     <body class="fondo6">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <nav><select name="a" id="uwu"></select></nav>
-        <header class="letra3">
+        <nav class="fondo6 letra3">
+            <label>Diseño:</label>
+            <select name="select" id="diseño">
+                <option value="value1" selected>White Page</option>
+                <option value="value2">Dark Page</option>
+                <option value="value3">Positive Design</option>
+                <option value="value4">Negative Design</option>
+              </select>
+        </nav>
+        <header class="fondo3 letra5">
             <h1>Curriculum Vitae</h1>
         </header>
-        <section>
+        <section class="fondo6 letra3">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 bg-light p-3 border">
+                    <div class="col-sm-6 p-3 border">
                         <img id="perfil" src="https://th.bing.com/th/id/OIP.kEFtpe5TXM-QBUpXjUe6XwHaF7?w=259&h=207&c=7&r=0&o=5&pid=1.7" alt="Imagen de perfil de ejemplo">
                     </div>
-                    <div class="col-sm-6 bg-light p-3 border" id="personal"></div>
+                    <div class="col-sm-6 p-3 border" id="personal"></div>
                 </div>
             </div>
         </section>
-        <section>
-            <h3>Estudios Complementarios</h3>
+        <section class="fondo6 letra3">
+            <h3 class="fondo4 letra4">Estudios Complementarios</h3>
             <div class="container">
                 <div class="row">
                     <div class="col-md-auto " id="studies"></div>
@@ -44,13 +52,13 @@
                 </div>
             </div>
         </section>
-        <section id="jobs">
-            <h3>Trabajos</h3>
+        <section id="jobs" class="fondo6 letra3">
+            <h3 class="fondo4 letra4">Trabajos</h3>
         </section>
-        <section id="skills">
-            <h3>Habilidades</h3>
+        <section id="skills" class="fondo6 letra3">
+            <h3 class="fondo4 letra4">Habilidades</h3>
         </section>
-        <footer>
+        <footer class="fondo5">
             <img src="assets/images/impresion.svg" alt="Imagen de adorno">
             <h3>PatitoSoft®<br>2023</h3>
         </footer>

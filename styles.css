@@ -9,35 +9,46 @@ nav {
 a {
     margin: 5%;
 }
-
+/*
+    Tema defectuoso
+*/
 .letra1 {
-    color: #7EA4A4
+    color: #003133
 }
 .letra2 {
-    color: #7E8C8C
+    color: rgba(255, 255, 255, 0.5)
 }
 .letra3 {
-    color: #E3E3E3;
+    color: rgba(0, 0, 0, 0.5);
 }
-
+.letra4 {
+    color: #67989A;
+}
+.letra5 {
+    color: #91b2b3;
+}
 .fondo1 {
-    color: #BCD9D9
+    background-color: #67989A
 }
 .fondo2 {
-    color: #929E9E
+    background-color: #417E80
 }
 .fondo3 {
-    color: #CED6D6
+    background-color: #236467
 }
 .fondo4 {
-    color: #9FBBBB
+    background-color: #0D4A4D
 }
 .fondo5 {
-    color: #7EA4A4
+    background-color: #003133
 }
 .fondo6 {
-    background-color: #0F364D;
+    background-color: #FFF;
 }
+/* #236467
+    #91b2b3
+    Tema oscuro
+*/
 
 section {
     border-color: #7ea4a4;
@@ -45,22 +56,19 @@ section {
 
 header {
     text-align: center;
+    margin: 2%;
 }
 
 #barra {
     text-align: center;
 }
 
-h3 {
-    color: #7E8C8C;
-    background-color: #CED6D6;
-}
-
+/*
 @media only screen and (max-width:600px) {
     body {
         background-color: #0F364D;
     }
-}
+}*/
 
 #personal {
     text-align: right;
@@ -80,6 +88,7 @@ img #perfil{
 }
 
 footer {
+    margin: 2%;
     background-color: black;
     color: azure;
     text-align: center;
@@ -105,28 +114,4 @@ BCD9D9 letra clara - resaltado
 CED6D6 fondo footer y header
 929E9E pestaña en uso
 7E8C8C borde - letra oscura - enfasis seleccion
-*/
-
-
-/**
-#834969
-#613663
-#1A414D
-#138645
-#6FB319
-#A3E44E
-#D5E44E
-#DF4320
-#B33519
-*/
-
-/*
-#0F364D
-#507385
-#8FA7B3
-#E3E3E3
-#C8CBDE
-#989DB3
-#606580
-#494D61
 */

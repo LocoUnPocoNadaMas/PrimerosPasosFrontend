@@ -11,6 +11,18 @@ import object from './assets/data/cv-model.json' assert {type: 'json'}
 
 window.onload = onInit();
 
+const fondo1 = "#67989A";
+const fondo2 = "#417E80";
+const fondo3 = "#236467";
+const fondo4 = "#0D4A4D";
+const fondo5 = "#003133";
+const fondo6 = "#FFF";
+const fondo6dark = "#202020";
+const letra1 = "#003133";
+const letra2 = "rgba(255, 255, 255, 0.5)";
+const letra3 = "rgba(0, 0, 0, 0.5)";
+const letra4 = "#67989A";
+
 function onInit() {
     //compatibility();
     personal();
@@ -18,108 +30,129 @@ function onInit() {
     studies();
     jobs();
     skills();
-    skin();
+    //skin();
+    //document.getElementById("diseño").addEventListener("click", onChange());
+    onChange();
+}
+
+function onChange() {
+    /*
+    var value = document.querySelector('#diseño').selectedOptions[0].value;
+    console.log(value);
+    */
+    document.getElementById("diseño").onchange = function () {
+
+        let selected = document.getElementById("diseño").value;
+        switch (selected) {
+            case "value1": {
+                console.log("awa");
+                changeSkin(".fondo6", fondo6, true);
+                changeSkin(".letra3", letra3, false);
+                changeSkin(".fondo4", fondo4, true);
+                changeSkin(".letra4", letra4, false);
+                changeSkin(".fondo1", fondo1, true);
+                changeSkin(".letra1", letra1, false);
+            }
+                break;
+            case "value2": {
+                console.log("ewe");
+                changeSkin(".fondo6", fondo6dark, true);
+                changeSkin(".letra3", letra2, false);
+                changeSkin(".fondo4", fondo1, true);
+                changeSkin(".letra4", letra1, false);
+                changeSkin(".fondo1", fondo4, true);
+                changeSkin(".letra1", letra4, false);
+            }
+                break;
+            case "value3": {
+                console.log("iwi");
+
+            }
+                break;
+            case "value4": {
+                console.log("owo");
+
+            }
+                break;
+
+            default: alert("something was wrong");
+                break;
+        }
+    }
 }
 
 function personal() {
+    addComponent("h2", "#personal", object.datos.personales.Nombre, null, null);
+    addComponent("h5", "#personal", object.datos.estudios.universitarios.Estado, null, null);
+    addComponent("h4", "#personal", object.datos.estudios.universitarios.Titulo, null, null);
+    addComponent("h4", "#personal", object.datos.estudios.universitarios.Lugar, null, null);
+    //addComponent("div", "#personal", null, id, barra);
+
     let lugar = document.querySelector("#personal");
     let agregar;
-
-    agregar = document.createElement("h2");
-    agregar.innerHTML = object.datos.personales.Nombre;
-    lugar.appendChild(agregar);
-    agregar = document.createElement("h5");
-    agregar.innerHTML = object.datos.estudios.universitarios.Estado;
-    lugar.appendChild(agregar);
-    agregar = document.createElement("h4");
-    agregar.innerHTML = object.datos.estudios.universitarios.Titulo;
-    lugar.appendChild(agregar);
-    agregar = document.createElement("h4");
-    agregar.innerHTML = object.datos.estudios.universitarios.Lugar;
-    lugar.appendChild(agregar);
-
     agregar = document.createElement("div");
     agregar.setAttribute("id", "barra");
-    agregar.setAttribute("class", "fondo2");
+    agregar.setAttribute("class", "fondo1 letra1");
     lugar.appendChild(agregar);
-    /*
-    lugar = document.querySelector("#barra");
-    agregar = document.createElement("ul");
-    lugar.appendChild(agregar);
-    */
 }
 
 function contact() {
-    
-    let lugar = document.querySelector("#barra");
-    let agregar;
-
-    agregar = document.createElement("a");
-    agregar.href=object.datos.personales.linkedin;
-    agregar.innerHTML = "LinkedIn";
-    lugar.appendChild(agregar);
-
-    agregar = document.createElement("a");
-    agregar.href="mailto:"+object.datos.personales.Email;
-    agregar.innerHTML = "Correo";
-    lugar.appendChild(agregar);
+    addComponent("a", "#barra", "LinkedIn", "href", object.datos.personales.linkedin);
+    addComponent("a", "#barra", "Correo", "href", "mailto:" + object.datos.personales.Email);
 }
 
 function studies() {
-    let lugar = document.querySelector("#studies");
-    let agregar = document.createElement("ul");
-    agregar.setAttribute("id", "stuList");
-    lugar.appendChild(agregar);
-
+    addComponent("ul", "#studies", null, "id", "stuList");
     object.datos.estudios.complementarios.forEach(element => {
-        //console.log(element.Curso);
-        lugar = document.querySelector("#stuList");
-        agregar = document.createElement("li");
-        agregar.innerHTML = element.Curso+" - "+element.Período;
-        lugar.appendChild(agregar);
-/*
-        lugar = document.querySelector("#stuPeriod");
-        agregar = document.createElement("p");
-        agregar.innerHTML = element.Período;
-        lugar.appendChild(agregar);*/
-
+        addComponent("li", "#stuList", element.Curso + " - " + element.Período, null, null);
     });
 }
 
 function jobs() {
-    let lugar = document.querySelector("#jobs");
-    let agregar = document.createElement("ul");
-    agregar.setAttribute("id", "jobList");
-    lugar.appendChild(agregar);
-
+    addComponent("ul", "#jobs", null, "id", "jobList");
     object.datos.trabajos.forEach(element => {
-        //console.log(element.Trabajo);
-        agregar = document.createElement("li");
-        agregar.innerHTML = element.Trabajo;
-
-        lugar = document.querySelector("#jobList");
-
-        lugar.appendChild(agregar);
+        addComponent("li", "#jobList", element.Trabajo, null, null);
     });
 }
 
 function skills() {
-    let lugar = document.querySelector("#skills");
-    let agregar = document.createElement("ul");
-    agregar.setAttribute("id", "skiList");
-    lugar.appendChild(agregar);
+    addComponent("ul", "#skills", null, "id", "skiList");
     object.datos.habilidades.forEach(element => {
-        //console.log(element);
-        let agregar = document.createElement("li");
-        agregar.innerHTML = element.Tipo;
-
-        let lugar = document.querySelector("#skiList");
-
-        lugar.appendChild(agregar);
+        addComponent("li", "#skiList", element.Tipo, null, null);
     });
 }
 
-function skin() {
+function addComponent(componente, id, element, attribName, attribValue) {
+    let agregar = document.createElement(componente);
+    if (typeof (element) === 'string')
+        agregar.innerHTML = element;
+    if (typeof (attribName) === 'string' && typeof (attribValue) === 'string')
+        agregar.setAttribute(attribName, attribValue);
+    let lugar = document.querySelector(id);
+    lugar.appendChild(agregar);
+
+}
+
+function changeSkin(clase, color, background) {
+    if (background) {
+        console.log("back: " + background);
+        let intro = document.querySelectorAll(clase);
+        //let intro = document.getElementsByClassName('fondo6');
+        intro.forEach(element => {
+            //element.className = 'fondo6 letra3';
+            element.style.backgroundColor = color;
+        });
+    } else {
+        console.log("color: " + background);
+        let intro = document.querySelectorAll(clase);
+        //let intro = document.getElementsByClassName('fondo6');
+        intro.forEach(element => {
+            //element.className = 'fondo6 letra3';
+            //element.style.backgroundColor = color;
+            element.style.color = color;
+        });
+    }
+
     /*
     let agregar = document.createElement("p");
         agregar.innerHTML = element;
@@ -128,28 +161,28 @@ function skin() {
 }
 
 function compatibility() {
-    var ES1     = !!(Array.prototype && Array.prototype.join),
-        ES3     = !!(Array.prototype && Array.prototype.pop),
-        ES51    = (function() {'use strict'; return !this; })(),
-        ES6     = !!Object.assign,
-        ES7     = !!(Array.prototype && Array.prototype.includes);
-            /*
-            var ES51    = Modernizr.es5,
-                ES6     = Modernizr.es6object;
-                ES7     = false;
-            */
+    var ES1 = !!(Array.prototype && Array.prototype.join),
+        ES3 = !!(Array.prototype && Array.prototype.pop),
+        ES51 = (function () { 'use strict'; return !this; })(),
+        ES6 = !!Object.assign,
+        ES7 = !!(Array.prototype && Array.prototype.includes);
+    /*
+    var ES51    = Modernizr.es5,
+        ES6     = Modernizr.es6object;
+        ES7     = false;
+    */
 
-        if(ES7){
-            alert('Tu navegador contiene características mínimas de ECMAScript 7');
-        }else if(ES6){
-            alert('Tu navegador contiene características mínimas de ECMAScript 6');
-        }else if(ES51){
-            alert('Tu navegador tiene soporte para ECMAScript 5.1');
-        }else if(ES3){
-            alert('Tu navegador contiene características de ECMAScript 3');
-        }else if(ES1){
-            alert('Tu navegador contiene características de ECMAScript 1');
-        }else{
-            alert('Tu navegador contiene características de ECMAScript desconocida');
-        }
+    if (ES7) {
+        alert('Tu navegador contiene características mínimas de ECMAScript 7');
+    } else if (ES6) {
+        alert('Tu navegador contiene características mínimas de ECMAScript 6');
+    } else if (ES51) {
+        alert('Tu navegador tiene soporte para ECMAScript 5.1');
+    } else if (ES3) {
+        alert('Tu navegador contiene características de ECMAScript 3');
+    } else if (ES1) {
+        alert('Tu navegador contiene características de ECMAScript 1');
+    } else {
+        alert('Tu navegador contiene características de ECMAScript desconocida');
+    }
 }
