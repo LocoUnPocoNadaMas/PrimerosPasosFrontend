@@ -1,9 +1,8 @@
 /**
  * ES5
+ * require no esta declarado?
  */
 //const object = require('./assets/data/cv-model.json');
-//const object= require('./assets/data/cv-model.json'); 
-//console.log(object);
 
 /**
  * ES6
@@ -56,10 +55,6 @@ function postInit() {
 }
 
 function onChange() {
-    /*
-    var value = document.querySelector('#diseño').selectedOptions[0].value;
-    console.log(value);
-    */
     document.getElementById("diseño").onchange = function () {
 
         let selected = document.getElementById("diseño").value;
@@ -89,17 +84,15 @@ function onChange() {
                 changeSkin(".letra4", letra4, false);
                 changeSkin(".fondo1", fondo1, true);
                 changeSkin(".letra1", letra1, false);
-
             }
                 break;
             case "value4": {
                 changeSkin(".fondo6", fondo4, true);
                 changeSkin(".letra3", letra2, false);
                 changeSkin(".fondo4", fondo2, true);
-                changeSkin(".letra4", letra5, false);
+                changeSkin(".letra4", letra4, false);
                 changeSkin(".fondo1", fondo1, true);
                 changeSkin(".letra1", letra1, false);
-
             }
                 break;
 
@@ -114,7 +107,6 @@ function personal() {
     addComponent("h5", "#personal", object.datos.estudios.universitarios.Estado, null, null);
     addComponent("h4", "#personal", object.datos.estudios.universitarios.Titulo, null, null);
     addComponent("h4", "#personal", object.datos.estudios.universitarios.Lugar, null, null);
-    //addComponent("div", "#personal", null, id, barra);
 
     let lugar = document.querySelector("#personal");
     let agregar;
@@ -163,29 +155,16 @@ function addComponent(componente, id, element, attribName, attribValue) {
 
 function changeSkin(clase, color, background) {
     if (background) {
-        console.log("back: " + background);
         let intro = document.querySelectorAll(clase);
-        //let intro = document.getElementsByClassName('fondo6');
         intro.forEach(element => {
-            //element.className = 'fondo6 letra3';
             element.style.backgroundColor = color;
         });
     } else {
-        console.log("color: " + background);
         let intro = document.querySelectorAll(clase);
-        //let intro = document.getElementsByClassName('fondo6');
         intro.forEach(element => {
-            //element.className = 'fondo6 letra3';
-            //element.style.backgroundColor = color;
             element.style.color = color;
         });
     }
-
-    /*
-    let agregar = document.createElement("p");
-        agregar.innerHTML = element;
-    let lugar = document.querySelectorAll("section")
-    */
 }
 
 function compatibility() {
