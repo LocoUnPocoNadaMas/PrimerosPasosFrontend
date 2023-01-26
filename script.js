@@ -58,7 +58,7 @@ function onChange() {
                 console.log("ewe");
                 changeSkin(".fondo6", fondo6dark, true);
                 changeSkin(".letra3", letra2, false);
-                changeSkin(".fondo4", fondo1, true);
+                changeSkin(".fondo4", fondo2, true);
                 changeSkin(".letra4", letra1, false);
                 changeSkin(".fondo1", fondo4, true);
                 changeSkin(".letra1", letra4, false);
@@ -66,11 +66,23 @@ function onChange() {
                 break;
             case "value3": {
                 console.log("iwi");
+                changeSkin(".fondo6", fondo2, true);
+                changeSkin(".letra3", letra3, false);
+                changeSkin(".fondo4", fondo4, true);
+                changeSkin(".letra4", letra4, false);
+                changeSkin(".fondo1", fondo1, true);
+                changeSkin(".letra1", letra1, false);
 
             }
                 break;
             case "value4": {
                 console.log("owo");
+                changeSkin(".fondo6", fondo4, true);
+                changeSkin(".letra3", letra3, false);
+                changeSkin(".fondo4", fondo2, true);
+                changeSkin(".letra4", letra5, false);
+                changeSkin(".fondo1", fondo1, true);
+                changeSkin(".letra1", letra1, false);
 
             }
                 break;
