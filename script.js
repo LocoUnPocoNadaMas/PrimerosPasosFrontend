@@ -2,12 +2,16 @@
  * ES5
  */
 //const object = require('./assets/data/cv-model.json');
+//const object= require('./assets/data/cv-model.json'); 
+//console.log(object);
 
 /**
  * ES6
+ * assert no funciona en Mozilla FIREFOX 109.0
  */
-import object from './assets/data/cv-model.json' assert {type: 'json'}
+//import object from './assets/data/cv-model.json' assert {type: 'json'}
 
+let object;
 
 window.onload = onInit();
 
@@ -18,12 +22,28 @@ const fondo4 = "#0D4A4D";
 const fondo5 = "#003133";
 const fondo6 = "#FFF";
 const fondo6dark = "#202020";
-const letra1 = "#003133";
+const letra1 = fondo5;
 const letra2 = "rgba(255, 255, 255, 0.5)";
 const letra3 = "rgba(0, 0, 0, 0.5)";
-const letra4 = "#67989A";
+const letra4 = fondo1;
 
 function onInit() {
+    fetch("./assets/data/cv-model.json")
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            object = (data);
+        })
+        .then(() => {
+            postInit();
+        })
+        .catch(() => {
+            alert('No funciona');
+        });
+}
+
+function postInit() {
     //compatibility();
     personal();
     contact();
@@ -45,7 +65,6 @@ function onChange() {
         let selected = document.getElementById("diseño").value;
         switch (selected) {
             case "value1": {
-                console.log("awa");
                 changeSkin(".fondo6", fondo6, true);
                 changeSkin(".letra3", letra3, false);
                 changeSkin(".fondo4", fondo4, true);
@@ -55,7 +74,6 @@ function onChange() {
             }
                 break;
             case "value2": {
-                console.log("ewe");
                 changeSkin(".fondo6", fondo6dark, true);
                 changeSkin(".letra3", letra2, false);
                 changeSkin(".fondo4", fondo2, true);
@@ -65,7 +83,6 @@ function onChange() {
             }
                 break;
             case "value3": {
-                console.log("iwi");
                 changeSkin(".fondo6", fondo2, true);
                 changeSkin(".letra3", letra3, false);
                 changeSkin(".fondo4", fondo4, true);
@@ -76,9 +93,8 @@ function onChange() {
             }
                 break;
             case "value4": {
-                console.log("owo");
                 changeSkin(".fondo6", fondo4, true);
-                changeSkin(".letra3", letra3, false);
+                changeSkin(".letra3", letra2, false);
                 changeSkin(".fondo4", fondo2, true);
                 changeSkin(".letra4", letra5, false);
                 changeSkin(".fondo1", fondo1, true);
